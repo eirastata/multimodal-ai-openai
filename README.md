@@ -1,56 +1,150 @@
-# Multimodal AI API using FastAPI and OpenAI
+# ORION – Multimodal AI Assistant
 
-This project is a Multimodal AI API built with FastAPI and OpenAI, capable of handling multiple types of inputs:
+Fullstack multimodal AI system integrating Large Language Models, Image Generation, Text-to-Speech and Speech-to-Text using FastAPI and OpenAI.
 
-## Features
+This project demonstrates how to build a structured AI application with modular backend architecture and a custom frontend interface.
 
-* Text generation (chat)
-* Image generation
-* Speech generation (Text-to-Speech)
-* Audio transcription (Speech-to-Text)
-* Modular architecture using FastAPI routers
+---
+
+## Overview
+
+ORION is a multimodal assistant capable of handling different types of input and output:
+
+- Conversational AI (Chat)
+- AI Image Generation
+- Text-to-Speech (TTS)
+- Speech-to-Text (STT)
+
+The system is designed following clean architecture principles, separating each AI capability into independent routers.
+
+---
+
+## Architecture
+
+The backend is structured using modular routers to improve scalability and maintainability.
+
+```
+api/
+ ├── textoRouter.py
+ ├── speech_router.py
+ ├── transcriptionRouter.py
+ ├── visionRouter.py
+frontend/
+ ├── templates/
+ │    ├── index.html
+ │    ├── chat.html
+ │    ├── vision.html
+ │    ├── speech.html
+ │    └── transcription.html
+ └── static/
+main.py
+```
+
+Each feature is exposed through a dedicated API endpoint, while the frontend consumes these endpoints via asynchronous fetch requests.
+
+---
 
 ## Technologies
 
-* Python
-* FastAPI
-* OpenAI API
-* Uvicorn
-* dotenv
+- Python
+- FastAPI
+- OpenAI API
+- HTML5
+- Bootstrap
+- JavaScript (Fetch API)
 
-## Project Structure
+---
 
-api/
+## Installation
 
-* textoRouter.py
-* visionRouter.py
-* speech_router.py
-* transcriptionRouter.py
+### 1. Clone the repository
 
-main.py
+```bash
+git clone https://github.com/eirastata/multimodal-ai-openai.git
+cd multimodal-ai-openai
+```
 
-## How to run
+### 2. Create virtual environment
 
-Create virtual environment:
-
+```bash
 python -m venv venv
+```
 
-Activate:
+Activate the environment:
 
+Windows:
+```bash
 venv\Scripts\activate
+```
 
-Install dependencies:
+Mac/Linux:
+```bash
+source venv/bin/activate
+```
 
-pip install fastapi uvicorn openai python-dotenv python-multipart
+### 3. Install dependencies
 
-Run server:
+```bash
+pip install -r requirements.txt
+```
 
-uvicorn main:app --reload
+If requirements.txt is not available:
 
-Open:
+```bash
+pip install fastapi uvicorn openai python-dotenv
+```
 
-http://127.0.0.1:8000/docs
+### 4. Configure environment variables
 
-## Author
+Create a `.env` file in the root directory:
 
-Tamine Eiras
+```
+OPENAI_API_KEY=your_api_key_here
+```
+
+---
+
+## Running the Application
+
+Start the server with:
+
+```bash
+uvicorn main:app --reload --port 9000
+```
+
+Access in your browser:
+
+```
+http://127.0.0.1:9000
+```
+
+---
+
+## API Endpoints
+
+- POST /api/text/chat
+- POST /api/vision/generate
+- POST /api/speech/generate
+- POST /api/transcription/generate
+
+---
+
+## Design Decisions
+
+- Modular FastAPI routers for separation of concerns
+- Streaming and binary responses for media handling
+- Base64 decoding for image generation
+- Clean frontend-backend separation
+- Environment variable protection for API credentials
+
+---
+
+## Purpose
+
+This project demonstrates practical integration of multimodal AI capabilities into a structured fullstack application, suitable for portfolio presentation and technical evaluation.
+
+---
+
+## License
+
+MIT License
