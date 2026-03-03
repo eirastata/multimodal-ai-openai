@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>ORION</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        body {
+            background: linear-gradient(135deg, #0f0c29, #1b1b2f, #16213e);
+        }
+
+        .card-orion {
+            background: linear-gradient(145deg, #2a1f4d, #1c1535);
+            border-radius: 20px;
+            transition: 0.3s ease;
+        }
+
+        .card-orion:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 0 25px rgba(140, 90, 255, 0.4);
+        }
+
+        .orion-img {
+            max-width: 200px;
+            margin: 0 auto 20px auto;
+            display: block;
+        }
+
+        .btn-orion {
+            background-color: #6c4cff;
+            border: none;
+            color: white;
+        }
+
+        .btn-orion:hover {
+            background-color: #8a6cff;
+            color: white;
+        }
+
+        h2, h5, p {
+            text-transform: lowercase;
+        }
+    </style>
+</head>
+
+<body class="text-light">
+
+<nav class="navbar navbar-dark bg-black shadow">
+    <div class="container">
+        <span class="navbar-brand fw-bold fs-4">ORION</span>
+    </div>
+</nav>
+
+<div class="container text-center mt-5">
+    <h2 class="fw-bold">oi. eu sou o ORION.</h2>
+    <p class="text-secondary">
+        seu monstrinho inteligente para conversar, criar imagens,
+        transformar texto em voz e ouvir o que você tem a dizer.
+    </p>
+</div>
+
+<div class="container mt-5">
+    <div class="row g-4">
+
+        <!-- CHAT -->
+        <div class="col-md-3">
+            <div class="card card-orion text-white p-4 h-100 text-center border-0">
+                <img src="/static/img/orion/orion_chat.jpg" class="orion-img">
+                <h5 class="fw-bold">vamos conversar?</h5>
+                <p>converse com ORION em tempo real e explore novas ideias.</p>
+                <a href="/chat" class="btn btn-orion mt-auto">conversar</a>
+            </div>
+        </div>
+
+        <!-- GERADOR DE IMAGEM -->
+        <div class="col-md-3">
+            <div class="card card-orion text-white p-4 h-100 text-center border-0">
+                <img src="/static/img/orion/orion_vision.jpg" class="orion-img">
+                <h5 class="fw-bold">vamos criar imagens?</h5>
+                <p>descreva sua ideia e deixe ORION transformar isso em arte.</p>
+                <a href="/vision" class="btn btn-orion mt-auto">criar</a>
+            </div>
+        </div>
+
+        <!-- TEXT TO SPEECH -->
+        <div class="col-md-3">
+            <div class="card card-orion text-white p-4 h-100 text-center border-0">
+                <img src="/static/img/orion/orion_speech.jpg" class="orion-img">
+                <h5 class="fw-bold">quer ouvir isso?</h5>
+                <p>transforme texto em voz natural com a ajuda de ORION.</p>
+                <a href="/speech" class="btn btn-orion mt-auto">gerar voz</a>
+            </div>
+        </div>
+
+        <!-- SPEECH TO TEXT -->
+        <div class="col-md-3">
+            <div class="card card-orion text-white p-4 h-100 text-center border-0">
+                <img src="/static/img/orion/orion_listen.jpg" class="orion-img">
+                <h5 class="fw-bold">pode falar!</h5>
+                <p>ORION escuta e transforma sua voz em texto instantaneamente.</p>
+                <a href="/transcription" class="btn btn-orion mt-auto">transcrever</a>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+</body>
+</html>
